@@ -1,0 +1,46 @@
+<html>
+	<head>
+	
+		<title>JavaScript</title>
+	
+	</head>
+	<body>
+		<p>Let's Play</p>
+		<p><select id="player">
+			
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		<button id="play">Enter</button>
+		</p>
+		
+		<script type="text/javascript">
+			document.getElementById("play").onclick = function(){
+				var answer = document.getElementById("player").value;
+				var result = false;
+				var num = 1;
+				while(!result){
+					var guess = Math.floor(Math.random() * 5) + 1;
+					console.log(guess);
+					if(answer == guess){
+					result = true;
+					alert("It took me " + num + " guesses");
+					}
+					else{
+					result = false;
+					}
+			
+			
+				num++;
+			}
+			
+		}
+		</script>
+
+
+
+	</body>
+</html>

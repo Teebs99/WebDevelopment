@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<title>AJAX</title>
+	<style type="text/css">
+
+
+	</style>
+	<script type="text/javascript" src="jquery-3.3.1.min">
+	
+	</script>
+	
+</head>
+
+
+<body>
+	<p></p>
+
+
+	<script type="text/javascript">
+		// Alerts content of "info.txt"
+			$.get("info.txt", function(data){
+			
+			alert(data);
+			
+			
+			});
+		
+		//Fail safe -- Alerts a failure message if data is not accessable
+			$.ajax("info.txt")
+			.done(function(data){
+			
+				alert(data);
+			
+			})
+			.fail(function(){
+			
+				alert("Could not get data");
+			
+			});
+		//Sets the empty paragraph tags to contain data
+			$.ajax("info.txt").done(function(data){
+			
+				$("p").html(data);
+			
+			});
+		
+	
+	
+	</script>
+
+
+
+</body>
+
+</html>
